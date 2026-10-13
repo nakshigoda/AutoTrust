@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ──────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-0 text-slate-100 font-sans;
+    min-height: 100dvh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-500 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-600;
+  }
+
+  ::selection {
+    @apply bg-brand-600/30 text-white;
+  }
+}
+
+/* ─── Component utilities ────────────────────────── */
+@layer components {
+  /* Glass card surface */
+  .glass {
+    @apply bg-surface-100/60 backdrop-blur-md border border-white/[0.06];
+  }
+
+  /* Solid card surface */
+  .card {
+    @apply bg-surface-100 border border-white/[0.07] rounded-2xl;
+  }
+
+  /* Subtle inner glow on interactive cards */
+  .card-interactive {
+    @apply card transition-all duration-200
+           hover:border-brand-600/40 hover:shadow-card-hover cursor-pointer;
+  }
+
+  /* Stat number style */
+  .stat-number {
+    @apply text-3xl font-bold tracking-tight text-white;
+  }
+
+  /* Mono hash/address text */
+  .hash-text {
+    @apply font-mono text-xs text-slate-400 break-all;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-widest text-slate-400;
+  }
+
+  /* Timeline connector */
+  .timeline-line {
+    @apply absolute left-4 top-8 bottom-0 w-px bg-surface-400;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-brand-300;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-300;
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500/60 focus:ring-offset-2 focus:ring-offset-surface-100;
+  }
+}
+
+/* ─── Utility overrides ──────────────────────────── */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Animated shimmer for loading skeletons */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 25%,
+      rgba(255,255,255,0.08) 50%,
+      rgba(255,255,255,0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+}
