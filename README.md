@@ -254,17 +254,6 @@ To compile or redeploy your own contract instance:
 
 ---
 
-## 📸 Screenshots
-
-| Public Vehicle Passport | Verification & Timeline |
-| :---: | :---: |
-| *[Screenshot Placeholder: Public Vehicle Passport Overview]* | *[Screenshot Placeholder: Maintenance & Accident Timeline]* |
-
-| Admin Management | Service & Claim Reporting |
-| :---: | :---: |
-| *[Screenshot Placeholder: Vehicle & Organization Admin]* | *[Screenshot Placeholder: Add Service / Report Accident Form]* |
-
----
 
 ## ⚠️ Known Limitations & Future Enhancements
 
